@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" type="plugin" group="content" method="upgrade" >
+	<name>Content - hotoMeta</name>
+	<author>John Moelholt</author>
+	<creationDate>2020-10-11</creationDate>
+	<copyright>Copyright (C) 2018 OBS1, Open Business Software. All rights reserved.</copyright>
+	<license>GNU General Public License version 3</license>
+	<authorEmail>info@obs.one</authorEmail>
+	<authorUrl>obs.one</authorUrl>
+	<version>3.1.1</version>
+	<description>PLG_CONTENT_HOTOMETA_XML_DESCRIPTION</description>
+
+	<files>
+    		<filename>index.html</filename>
+    		<filename plugin="hotometa">hotometa.php</filename>
+  		<folder>language</folder>
+	</files>
+
+
+	<updateservers>
+    		<server type="extension" priority="1" name="Content - hotoMeta"><![CDATA[https://obs.one/index.php?option=com_digicom&task=responses&source=release&format=xml&provider=joomla&pid=1]]></server>
+	</updateservers>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="hotometa_tablabel" type="text"
+					default="hotoMeta"
+					label="PLG_CONTENT_HOTOMETA_TABLABEL_LABEL"
+					description="PLG_CONTENT_HOTOMETA_TABLABEL_DESC"
+					size="40"
+				/>
+				<field name="hotometa_namelabel" type="text"
+					default="property"
+					label="PLG_CONTENT_HOTOMETA_NAME_LABEL"
+					description="PLG_CONTENT_HOTOMETA_NAME_DESC"
+					size="40"
+				/>
+				<field name="hotometa_contentlabel" type="text"
+					default="content"
+					label="PLG_CONTENT_HOTOMETA_CONTENT_LABEL"
+					description="PLG_CONTENT_HOTOMETA_CONTENT_DESC"
+					size="40"
+				/>
+				<field name="hotometa_outputempty" type="list"
+					default="Yes"
+					label="PLG_CONTENT_HOTOMETA_OUTPUTEMPTY_LABEL"
+					description="PLG_CONTENT_HOTOMETA_OUTPUTEMPTY_DESC">
+					<option value="Yes">Yes</option>
+  					<option value="No">No</option>
+				</field>
+
+				<field name="hotometa_usecurl" type="radio" default="0" label="PLG_CONTENT_HOTOMETA_USECURL_LABEL" description="PLG_CONTENT_HOTOMETA_USECURL_DESC" class="btn-group btn-group-yesno">
+					<option value="0">JNO</option>
+  					<option value="1">JYES</option>
+				</field>
+
+				<field name="hotometa_curl" type="text"
+					label="PLG_CONTENT_HOTOMETA_CURL_LABEL"
+					description="PLG_CONTENT_HOTOMETA_CURL_DESC"
+					size="40"
+					default="Canonical-URL"
+					showon="hotometa_usecurl:1"
+				/>
+
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
